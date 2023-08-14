@@ -2,22 +2,22 @@
 /**
  *main - Entry point
  *Description: 'print alphabets lowercase and uppercase'
- *Return: always 8
+ *Return: always 0(success)
  */
 int main(void)
 {
-	int n = 97;
-	int m = 65;
+	char ch = 'a';
+	char CH = 'A';
 
-	while (n <= 322)
+	while (ch <= 'z')
 	{
-		putchar(n);
-		n++;
+		putchar(ch);
+		ch++;
 	}
-	while (m <= 90)
+	while (CH <= 'Z')
 	{
-		putchar(m);
-		m++;
+		putchar(CH);
+		CH++;
 	}
 	putchar('\n');
 	return (0);
