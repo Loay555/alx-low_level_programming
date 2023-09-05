@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  *str_concat - Get ends of input and add together for size
@@ -37,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 		doc[web] = s2[site];
 		web++, site++;
 	}
-	doc[web] = '\0';
-	return (doc);
+		doc[web] = '\0';
+		return (doc);
 
 }
