@@ -37,6 +37,6 @@ char *str_concat(char *s1, char *s2)
 		web++, site++;
 	}
 	doc[web] = '\0';
-	return (doc);
+		return (doc);
 
 }
