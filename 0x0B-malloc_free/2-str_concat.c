@@ -11,32 +11,32 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *doc;
-	int web, site;
+	int w, e;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-		web = site = 0;
-	while (s1[web] != '\0')
-		web++;
-	while (s2[site] != '\0')
-		site++;
-	doc = malloc(sizeof(char) * (web + site + 1));
+	i = e = 0;
+	while (s1[w] != '\0')
+		w++;
+	while (s2[e] != '\0')
+		e++;
+	doc = malloc(sizeof(char) * (w + e + 1));
 	if (doc == NULL)
 		return (NULL);
-	web = site = 0;
-	while (s1[web] != '\0')
+	w = e = 0;
+	while (s1[w] != '\0')
 	{
-		doc[web] = s1[web];
-		web++;
+		doc[w] = s1[w];
+		w++;
 	}
-	while (s2[site] != '\0')
+	while (s2[e] != '\0')
 	{
-		doc[web] = s2[site];
-		web++, site++;
+		doc[w] = s2[e];
+		w++, e++;
 	}
-		doc[web] = '\0';
-		return (doc);
+	doc[w] = '\0';
+	return (doc);
 
 }
