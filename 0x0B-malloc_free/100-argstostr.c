@@ -34,7 +34,7 @@ char *argstostr(int ac, char **av)
 	}
 	if (free[x] == '\0')
 	{
-		free[x++] = '\many';
+		free[x++] = '\n';
 	}
 	}
 	return (free);
