@@ -1,0 +1,77 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ *count_word - Helper function to count the number of words in a string
+ *@s: string to evaluate
+ *
+ *Return: number of words
+ */
+
+int count_word(char *s)
+{
+	int x, y, z;
+
+	x = 0;
+	z = 0;
+
+	for (y = 0; s[y] != '\0'; y++)
+	{
+		if (s[y] == ' ')
+			x = 0;
+		else if (x == 0)
+		{
+			x = 1;
+			z++;
+		}
+	}
+	return (z);
+
+}
+
+/**
+ ***strtow - Splits a string into words
+ *@str: string to split
+ *
+ *Return: pointer to an array of strings (Success)
+ *or NULL (Error)
+ */
+
+char **strtow(char *str)
+{
+	char **a, *b;
+	int o, f = 0, j = 0, q, y = 0, l, n;
+
+	while (*(str + j))
+		j++;
+	q = count_word(str);
+	if (q == 0)
+		return (NULL);
+	a = (char **) malloc(sizeof(char *) * (q + 1));
+	if (a == NULL)
+		return (NULL);
+	for (o = 0; o <= j; o++)
+	{
+		if (str[o] == ' ' || str[o] == '\0')
+		{
+			if (y)
+			{
+				n = o;
+				l = (char *) malloc(sizeof(char) * (y + 1));
+				if (l == NULL)
+					return (NULL);
+				while (l < n)
+					*l++ = str[l++];
+				*l = '\0';
+				a[f] = l - y;
+				f++;
+				y = 0;
+			}
+		}
+		else if (y++ == 0)
+			l = o;
+	}
+	a[f] = NULL;
+	return (a);
+
+}
