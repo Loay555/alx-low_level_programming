@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * *array_range - Creates an array of integers
@@ -12,12 +12,12 @@
 int *array_range(int min, int max)
 {
 	int *e;
-	int q, h;
+	int q, size;
 
 	if (min > max)
 		return (NULL);
-	h = max - min + 1;
-	e = malloc(hof(int) * h);
+	size = max - min + 1;
+	e = malloc(sizeof(int) * size);
 
 	if (e == NULL)
 		return (NULL);
