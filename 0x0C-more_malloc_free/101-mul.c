@@ -66,7 +66,7 @@ void errors(void)
 int main(int bc, char *dg[])
 {
 	char *x, *y;
-	int k, p, w, e, c, v, z, score, u = 0;
+	int k, p, w, e, c, v, z, *result, u = 0;
 
 	x = dg[1], y = dg[2];
 	if (bc != 3 || !is_digit(x) || !is_digit(y))
