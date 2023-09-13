@@ -14,7 +14,7 @@
 int main(int __attribute__((__unused__)) t, char *u[])
 {
   int v, s;
-  char *e;
+  char *op;
 
   if (t != 4)
     {
@@ -22,21 +22,21 @@ int main(int __attribute__((__unused__)) t, char *u[])
       exit(98);
     }
   v = atoi(u[1]);
-  e = u[2];
+  op = u[2];
   s = atoi(u[3]);
 
-  if (get_e_func(e) == NULL || e[1] != '\0')
+  if (get_op_func(op) == NULL || op[1] != '\0')
     {
       printf("Error\n");
       exit(99);
     }
-  if ((*e == '/' && s == 0) ||
-      (*e == '%' && s == 0))
+  if ((*op == '/' && s == 0) ||
+      (*op == '%' && s == 0))
     {
       printf("Error\n");
       exit(100);
     }
-  printf("%d\n", get_e_func(e)(v, s));
+  printf("%d\n", get_op_func(op)(v, s));
   return (0);
 
 }
